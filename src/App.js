@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import Dodecahedron from './components/Dodecahedron';
+import { Dodecahedron } from './components/Dodecahedron';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Resume from './components/Resume';

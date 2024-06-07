@@ -2,9 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
-export function Dodecahedron() {
+export function Dodecahedron({ onSectionChange }) {
   const mesh = useRef();
-  const { camera, gl } = useThree();
+  const { camera } = useThree();
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
 
@@ -26,7 +26,34 @@ export function Dodecahedron() {
       if (intersects.length > 0) {
         const faceIndex = intersects[0].faceIndex;
         console.log(`Face ${faceIndex} clicked`);
-        // Add logic to navigate to different sections based on faceIndex
+        switch (faceIndex) {
+          case 0:
+          case 1:
+            onSectionChange('aboutMe');
+            break;
+          case 2:
+          case 3:
+            onSectionChange('projects');
+            break;
+          case 4:
+          case 5:
+            onSectionChange('resume');
+            break;
+          case 6:
+          case 7:
+            onSectionChange('blog');
+            break;
+          case 8:
+          case 9:
+            onSectionChange('stackFXCreative');
+            break;
+          case 10:
+          case 11:
+            onSectionChange('contact');
+            break;
+          default:
+            break;
+        }
       }
     };
 
@@ -37,12 +64,14 @@ export function Dodecahedron() {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleMouseClick);
     };
-  }, [camera, raycaster]);
+  }, [camera, raycaster, onSectionChange]);
 
   return (
-    <mesh ref={mesh}>
-      <dodecahedronGeometry args={[1, 0]} />
-      <meshStandardMaterial color={'orange'} />
-    </mesh>
+    <div className="flex justify-center items-center h-screen bg-gray-800">
+      <mesh ref={mesh}>
+        <dodecahedronGeometry args={[1, 0]} />
+        <meshStandardMaterial color={'orange'} />
+      </mesh>
+    </div>
   );
 }

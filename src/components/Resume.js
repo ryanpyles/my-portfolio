@@ -1,13 +1,12 @@
 import React from 'react';
-import './Resume.css';
 
 function Resume() {
   return (
-    <div className="section resume">
-      <h1>Resume</h1>
-      
-      <div className="summary">
-        <h2>Summary</h2>
+    <div className="max-w-4xl mx-auto p-4 text-white">
+      <h1 className="text-3xl font-bold text-center mb-6">Resume</h1>
+
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold mb-4">Summary</h2>
         <p>
           At StackFX Creative, my dedication to web innovation has been a cornerstone of our operations since 2023. Through the development of web applications leveraging JavaScript, React, and Node.js, our team has cultivated a 30% uptick in client user engagement. This success stems from a client-centric approach, ensuring that each solution is tailored to the distinctive business objectives of our partners.
         </p>
@@ -16,9 +15,9 @@ function Resume() {
         </p>
       </div>
 
-      <div className="experience">
-        <h2>Experience</h2>
-        <ul>
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold mb-4">Experience</h2>
+        <ul className="space-y-4">
           <li>
             <strong>Founder, Web Developer</strong> - StackFX Creative (January 2023 - Present)
             <p>Spearheaded the development and deployment of several web applications, utilizing technologies like JavaScript, React, and Node.js. Improved client websites' performance and user experience, leading to a 30% increase in user engagement. Collaborated with clients to gather requirements and deliver custom solutions that align with their business objectives.</p>
@@ -42,9 +41,9 @@ function Resume() {
         </ul>
       </div>
 
-      <div className="education">
-        <h2>Education</h2>
-        <ul>
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold mb-4">Education</h2>
+        <ul className="space-y-2">
           <li>
             <strong>Computer Software Engineering</strong> - Digital Film Academy (September 2022 - August 2023)
           </li>
@@ -57,9 +56,9 @@ function Resume() {
         </ul>
       </div>
 
-      <div className="skills">
-        <h2>Skills</h2>
-        <ul>
+      <div className="mb-6">
+        <h2 className="text-2xl font-semibold mb-4">Skills</h2>
+        <ul className="list-disc pl-5 space-y-2">
           <li>JavaScript</li>
           <li>React.js</li>
           <li>Node.js</li>
@@ -71,8 +70,8 @@ function Resume() {
         </ul>
       </div>
 
-      <div className="download-resume">
-        <a href="/resume.pdf" download="Ryan_Pyles_Resume.pdf">Download Resume (PDF)</a>
+      <div className="text-center mt-6">
+        <a href="/resume.pdf" download="Ryan_Pyles_Resume.pdf" className="inline-block p-3 bg-orange-500 text-white rounded-md hover:bg-orange-600">Download Resume (PDF)</a>
       </div>
     </div>
   );
