@@ -64,7 +64,7 @@ export function Dodecahedron({ onSectionChange }) {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('click', handleMouseClick);
     };
-  }, [camera, raycaster, onSectionChange]);
+  }, [camera, raycaster, mouse, onSectionChange]);
 
   return (
     <div className="flex justify-center items-center h-screen bg-gray-800">
